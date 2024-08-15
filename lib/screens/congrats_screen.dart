@@ -19,6 +19,7 @@ class CongratulationsScreen extends StatelessWidget {
               AssetsConstants.congratulations,
               height: 200.h,
               width: 200.w,
+              repeat: false,
             ),
             SizedBox(height: 24.h),
             customTextWidget(
@@ -47,12 +48,12 @@ class CongratulationsScreen extends StatelessWidget {
                   width: double.infinity,
                   padding:
                       EdgeInsets.symmetric(horizontal: 24.h, vertical: 10.h),
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     borderRadius: BorderRadius.vertical(
                       top: Radius.circular(10),
                       bottom: Radius.circular(10),
                     ),
-                    color: Colors.teal,
+                    color: Theme.of(context).primaryColor,
                   ),
                   child: Center(
                     child: customTextWidget(

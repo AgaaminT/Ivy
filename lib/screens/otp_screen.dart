@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ivy/widgets/custom_appbar.dart';
 import 'package:ivy/widgets/custom_navigator.dart';
 import 'package:ivy/widgets/custom_text_widget.dart';
 import 'eligibility_screen.dart';
@@ -8,27 +9,20 @@ class VerifyOTPScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new, color: Colors.black),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
+      appBar: CustomAppBar(
+        isBackButton: true,
+        title: 'confirm OTP',
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'Verify yourself',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
             const SizedBox(height: 20),
             const TextField(
               decoration: InputDecoration(
-                border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10))),
                 labelText: 'OTP',
               ),
             ),
@@ -43,12 +37,12 @@ class VerifyOTPScreen extends StatelessWidget {
                   width: double.infinity,
                   padding:
                       EdgeInsets.symmetric(horizontal: 24.h, vertical: 10.h),
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     borderRadius: BorderRadius.vertical(
                       top: Radius.circular(10),
                       bottom: Radius.circular(10),
                     ),
-                    color: Colors.teal,
+                    color: Theme.of(context).primaryColor,
                   ),
                   child: Center(
                     child: customTextWidget(

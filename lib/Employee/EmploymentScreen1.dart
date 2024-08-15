@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ivy/Employee/EmploymentScreen2.dart';
+import 'package:ivy/widgets/custom_appbar.dart';
 import 'package:ivy/widgets/custom_navigator.dart';
 import 'package:ivy/widgets/custom_text_widget.dart';
 
@@ -17,25 +18,9 @@ class _EmploymentScreen1State extends State<EmploymentScreen1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Employment Details'),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-        actions: [
-          TextButton(
-            onPressed: () {
-              // Handle Skip button press
-            },
-            child: const Text(
-              'Skip',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-        ],
+      appBar: CustomAppBar(
+        title: 'Employment Details',
+        skip: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -71,6 +56,37 @@ class _EmploymentScreen1State extends State<EmploymentScreen1> {
                 ),
               ],
             ),
+            const SizedBox(height: 16),
+            TextFormField(
+              decoration: const InputDecoration(
+                labelText: 'Previous Company',
+              ),
+            ),
+            TextFormField(
+              decoration: const InputDecoration(
+                labelText: 'Location',
+              ),
+            ),
+            TextFormField(
+              decoration: const InputDecoration(
+                labelText: 'Department',
+              ),
+            ),
+            TextFormField(
+              decoration: const InputDecoration(
+                labelText: 'Joining Date',
+              ),
+            ),
+            TextFormField(
+              decoration: const InputDecoration(
+                labelText: 'Worked Till',
+              ),
+            ),
+            TextFormField(
+              decoration: const InputDecoration(
+                labelText: 'Current Salary / Stipend',
+              ),
+            ),
             const Spacer(),
             Center(
               child: GestureDetector(
@@ -83,12 +99,12 @@ class _EmploymentScreen1State extends State<EmploymentScreen1> {
                   width: double.infinity,
                   padding:
                       EdgeInsets.symmetric(horizontal: 24.h, vertical: 10.h),
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     borderRadius: BorderRadius.vertical(
                       top: Radius.circular(10),
                       bottom: Radius.circular(10),
                     ),
-                    color: Colors.teal,
+                    color: Theme.of(context).primaryColor,
                   ),
                   child: Center(
                     child: customTextWidget(

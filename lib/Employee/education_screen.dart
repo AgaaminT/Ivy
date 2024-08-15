@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ivy/widgets/custom_appbar.dart';
 
 import 'package:ivy/widgets/custom_navigator.dart';
 import 'package:ivy/widgets/custom_text_widget.dart';
@@ -31,14 +32,8 @@ class _EducationFormState extends State<EducationForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: (const Text('Education Form')),
-        // backgroundColor: Colors.blueGrey,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
+      appBar: CustomAppBar(
+        title: ('Education Form'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -122,12 +117,12 @@ class _EducationFormState extends State<EducationForm> {
                   width: double.infinity,
                   padding:
                       EdgeInsets.symmetric(horizontal: 24.h, vertical: 10.h),
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     borderRadius: BorderRadius.vertical(
                       top: Radius.circular(10),
                       bottom: Radius.circular(10),
                     ),
-                    color: Colors.teal,
+                    color: Theme.of(context).primaryColor,
                   ),
                   child: Center(
                     child: customTextWidget(

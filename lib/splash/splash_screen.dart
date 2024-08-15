@@ -8,7 +8,7 @@ import 'package:ivy/ui/initial/initial_screen.dart';
 import 'package:ivy/widgets/custom_navigator.dart'; // Adjust the import path accordingly
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+  const SplashScreen({super.key});
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();

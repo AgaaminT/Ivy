@@ -186,6 +186,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ivy/constants/assets_constants.dart';
 import 'package:ivy/screens/login_screen.dart';
+import 'package:ivy/screens/name_screen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../widgets/custom_navigator.dart';
 import '../../widgets/custom_text_widget.dart';
@@ -203,7 +204,7 @@ class _StartScreenState extends State<StartScreen> {
 
   Future<void> _completeWelcomeScreen(BuildContext context) async {
     // await AppPreferences.instance.saveBool('hasShownWelcome', true);
-    CustomNavigator(context: context, screen: LoginScreen()).pushReplacement();
+    CustomNavigator(context: context, screen: NameScreen()).pushReplacement();
   }
 
   @override
@@ -247,7 +248,7 @@ class _StartScreenState extends State<StartScreen> {
             child: GestureDetector(
               onTap: () {
                 // Navigate to the login screen directly
-                CustomNavigator(context: context, screen: LoginScreen())
+                CustomNavigator(context: context, screen: NameScreen())
                     .pushReplacement();
               },
               child:
@@ -265,7 +266,7 @@ class _StartScreenState extends State<StartScreen> {
                 effect: ExpandingDotsEffect(
                   dotWidth: 10.w,
                   dotHeight: 10.h,
-                  activeDotColor: Colors.blue,
+                  activeDotColor: Colors.green,
                   dotColor: Colors.grey,
                 ),
               ),
@@ -325,7 +326,7 @@ class _StartScreenState extends State<StartScreen> {
           borderRadius: BorderRadius.vertical(
               top: Radius.circular(10), bottom: Radius.circular(10)),
           gradient: LinearGradient(
-            colors: [Color(0xff0043fe), Color(0xff00e6fe)],
+            colors: [Color.fromARGB(78, 3, 182, 227), Color(0xff00e6fe)],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),

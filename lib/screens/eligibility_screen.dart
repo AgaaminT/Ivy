@@ -103,7 +103,7 @@ class _EligibilityScreenState extends State<EligibilityScreen> {
                 "Hurray ${nameController.text.isNotEmpty ? nameController.text : 'rishi24'}.iit is available!",
                 fontSize: 18.sp,
                 textAlign: TextAlign.center,
-                color: Colors.green,
+                color: Theme.of(context).primaryColor,
               ),
               const Spacer(),
               Center(
@@ -117,12 +117,12 @@ class _EligibilityScreenState extends State<EligibilityScreen> {
                     width: double.infinity,
                     padding:
                         EdgeInsets.symmetric(horizontal: 24.h, vertical: 10.h),
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                         borderRadius: BorderRadius.vertical(
                           top: Radius.circular(10),
                           bottom: Radius.circular(10),
                         ),
-                        color: Colors.teal),
+                        color: Theme.of(context).primaryColor),
                     child: Center(
                       child: customTextWidget(
                         'Claim',
@@ -146,7 +146,7 @@ class _EligibilityScreenState extends State<EligibilityScreen> {
       children: [
         Icon(
           Icons.check_circle,
-          color: Colors.teal,
+          color: Theme.of(context).primaryColor,
           size: 16.sp,
         ),
         SizedBox(width: 8.w),

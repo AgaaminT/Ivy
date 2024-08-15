@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ivy/constants/assets_constants.dart';
 import 'package:ivy/screens/claim_screen.dart';
 import 'package:ivy/screens/congrats_screen.dart';
+import 'package:ivy/widgets/custom_appbar.dart';
 import 'package:ivy/widgets/custom_navigator.dart';
 import 'package:ivy/widgets/custom_text_widget.dart';
 
@@ -12,23 +13,9 @@ class PaymentMethodScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
-          onPressed: () {
-            CustomNavigator(context: context, screen: ClaimSmartNameScreen())
-                .pushReplacement();
-          },
-        ),
-        title: customTextWidget(
-          "Payment method",
-          fontSize: 18.sp,
-          fontWeight: FontWeight.bold,
-          color: Colors.black,
-        ),
-        centerTitle: true,
+      appBar: CustomAppBar(
+        title: 'Payment method',
+        isBackButton: true,
       ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
@@ -132,12 +119,12 @@ class PaymentMethodScreen extends StatelessWidget {
                   width: double.infinity,
                   padding:
                       EdgeInsets.symmetric(horizontal: 24.h, vertical: 10.h),
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     borderRadius: BorderRadius.vertical(
                       top: Radius.circular(10),
                       bottom: Radius.circular(10),
                     ),
-                    color: Colors.teal,
+                    color: Theme.of(context).primaryColor,
                   ),
                   child: Center(
                     child: customTextWidget(
