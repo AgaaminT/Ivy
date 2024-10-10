@@ -5,5 +5,5 @@ class PrefConstants {
   static const kTokenType = "tokenType";  
   static const kIsLogin = "IsLogin";  
 
-  static const kLanguageId = "languageId";  
+ 
 }
